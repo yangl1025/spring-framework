@@ -2400,13 +2400,13 @@ some around advice used in conjunction with a number of strongly typed parameter
 
 	public interface PersonService {
 
-		Person getPerson(String personName, int age);
+		org.sp.Person getPerson(String personName, int age);
 	}
 
 	public class DefaultPersonService implements PersonService {
 
-		public Person getPerson(String name, int age) {
-			return new Person(name, age);
+		public org.sp.Person getPerson(String name, int age) {
+			return new org.sp.Person(name, age);
 		}
 	}
 ----
@@ -2417,13 +2417,13 @@ some around advice used in conjunction with a number of strongly typed parameter
 
 	interface PersonService {
 
-		fun getPerson(personName: String, age: Int): Person
+		fun getPerson(personName: String, age: Int): org.sp.Person
 	}
 
 	class DefaultPersonService : PersonService {
 
-		fun getPerson(name: String, age: Int): Person {
-			return Person(name, age)
+		fun getPerson(name: String, age: Int): org.sp.Person {
+			return org.sp.Person(name, age)
 		}
 	}
 ----

@@ -3,7 +3,7 @@
 	version="1.0">
 
 	<persistence-unit name="Drivers" transaction-type="RESOURCE_LOCAL">
-		<class>org.springframework.orm.jpa.domain.Person</class>
+		<class>org.springframework.orm.jpa.domain.org.sp.Person</class>
 		<class>org.springframework.orm.jpa.domain.DriversLicense</class>
 		<exclude-unlisted-classes />
 	</persistence-unit>

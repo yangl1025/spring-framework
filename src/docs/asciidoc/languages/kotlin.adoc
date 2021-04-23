@@ -615,11 +615,11 @@ For Kotlin `Flow`, a  `Flow<T>.transactional` extension is provided.
 
         fun updatePeople() = findPeople().map(::updatePerson).transactional(operator)
 
-        private fun findPeople(): Flow<Person> {
+        private fun findPeople(): Flow<org.sp.Person> {
             // SELECT SQL statement
         }
 
-        private suspend fun updatePerson(person: Person): Person {
+        private suspend fun updatePerson(person: org.sp.Person): org.sp.Person {
             // UPDATE SQL statement
         }
     }
@@ -680,7 +680,7 @@ within the primary constructor, as in the following example:
 
 [source,kotlin,indent=0]
 ----
-	class Person(val name: String, val age: Int)
+	class org.sp.Person(val name: String, val age: Int)
 ----
 
 You can optionally add https://kotlinlang.org/docs/reference/data-classes.html[the `data` keyword]
@@ -692,13 +692,13 @@ in the primary constructor:
 * `componentN()` functions that correspond to the properties in their order of declaration
 * `copy()` function
 
-As the following example shows, this allows for easy changes to individual properties, even if `Person` properties are read-only:
+As the following example shows, this allows for easy changes to individual properties, even if `org.sp.Person` properties are read-only:
 
 [source,kotlin,indent=0]
 ----
-	data class Person(val name: String, val age: Int)
+	data class org.sp.Person(val name: String, val age: Int)
 
-	val jack = Person(name = "Jack", age = 1)
+	val jack = org.sp.Person(name = "Jack", age = 1)
 	val olderJack = jack.copy(age = 2)
 ----
 
