@@ -13,7 +13,6 @@ public class ServiceB {
 	}
 
 	public void callA(){
-		serviceA.callB();
 		System.out.println("B call A");
 	}
 }
